@@ -1,85 +1,80 @@
-# DDD Coordination Prototype
+# Coordination State Machine Prototype
 
-A minimal prototype showing how payment links can act as coordination signals inside a workflow.
+A lightweight prototype exploring how financial transactions can act as **coordination signals** inside decentralized systems.
 
-## Concept
+Instead of treating payments as the final step of a workflow, this prototype treats **payment confirmation as a state transition signal** that advances a system's state.
 
-This prototype tests a simple flow:
+---
 
-Task created  
-→ Task started  
-→ Task completed  
-→ Payment link attached  
-→ Payment confirmed  
-→ Task state advances
+# Core Idea
 
-It also includes a safety interrupt:
+Many decentralized workflows rely on manual coordination between participants.
 
-Task completed  
-→ Hold raised  
-→ Payout paused  
-→ Hold released  
-→ Flow resumes
+This prototype explores a simple alternative:
+In this model, **financial transactions double as coordination signals**.
 
-## Stack
+This turns payment links from simple payment tools into **coordination primitives**.
 
-- NestJS backend
-- Static frontend served by NestJS
-- In-memory task store
+---
 
-## Core idea
+# Safety Mechanism
 
-This prototype is designed to demonstrate that:
+Real coordination systems require interruption mechanisms.
 
-- work completion can act as a signal
-- payment links can act as structured payout steps
-- payment confirmation can trigger state transitions
-- safety holds can interrupt coordination flows
+This prototype includes a basic **hold / dispute state**:
+This introduces a **governance safety interrupt** without requiring full DAO voting.
 
-## State machine
+---
 
-- OPEN
-- IN_PROGRESS
-- COMPLETED_PENDING_PAYOUT
-- ON_HOLD
-- PAYOUT_SENT
-- PAID_CONFIRMED
+# State Machine
 
-## API endpoints
+The prototype currently implements the following task states:
+Each state transition represents a **coordination event** in the workflow.
 
-- `GET /tasks`
-- `POST /tasks`
-- `POST /tasks/:id/start`
-- `POST /tasks/:id/complete`
-- `POST /tasks/:id/hold`
-- `POST /tasks/:id/release`
-- `POST /tasks/:id/payment-link`
-- `POST /tasks/:id/confirm-payment`
+---
 
-## Run locally
+# Stack
 
-Install dependencies:
+Backend:
+- NestJS
 
-```bash
-npm install
-```
+Frontend:
+- Simple static HTML / CSS / JS
 
-Run the app:
+Storage:
+- In-memory state (prototype only)
 
-```bash
-npm run start:dev
-```
+---
 
-Open:
+# Architectural Direction
 
-```text
-http://localhost:3000
-```
+The broader concept is a modular stack:
+This repository focuses on the **DDD coordination layer**, exploring how task workflows can be driven by financial confirmation signals.
 
-## Architecture framing
+---
 
-- Orivon = verification layer
-- DDD = coordination layer
-- Lancemint = execution layer
+# Purpose of the Prototype
 
-This prototype currently focuses on the DDD coordination layer and payout-triggered state transitions.
+This is an early experiment designed to test a simple hypothesis:
+
+> Payments can act as coordination signals inside governance workflows.
+
+The goal is to build a minimal implementation and explore how this primitive might integrate with existing on-chain payment infrastructure.
+
+---
+
+# Status
+
+Early prototype.
+
+The focus is on testing the **state machine concept**, not production readiness.
+
+---
+
+# Potential Next Steps
+
+- integrate payment link providers
+- add verification gates
+- support dispute resolution flows
+- connect to DAO task systems
+- experiment with on-chain confirmation triggers
