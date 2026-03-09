@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.subtitle {
+  color: #94a3b8;
+}
+
+.panel {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasks-header button {
+  width: auto;
+}
+
+.tasks-container {
+  display: grid;
+  gap: 16px;
+}
+
+.task-card {
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 16px;
+  background: #0b1220;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.task-meta {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.task-status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.status-OPEN {
+  background: #334155;
+}
+
+.status-IN_PROGRESS {
+  background: #1d4ed8;
+}
+
+.status-COMPLETED_PENDING_PAYOUT {
+  background: #b45309;
+}
+
+.status-ON_HOLD {
+  background: #7c2d12;
+}
+
+.status-PAYOUT_SENT {
+  background: #6d28d9;
+}
+
+.status-PAID_CONFIRMED {
+  background: #15803d;
+}
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.task-actions button {
+  width: auto;
+  padding: 8px 12px;
+}
+
+.payment-link {
+  margin-top: 10px;
+  word-break: break-all;
+}
+
+.payment-link a {
+  color: #60a5fa;
+}
+
+.empty-state {
+  color: #94a3b8;
+}

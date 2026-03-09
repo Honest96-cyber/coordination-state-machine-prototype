@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDD Coordination Prototype</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>DDD Coordination Prototype</h1>
+        <p class="subtitle">
+          Orivon verifies · DDD coordinates · Lancemint pays
+        </p>
+      </header>
+
+      <section class="panel">
+        <h2>Create Task</h2>
+        <form id="create-task-form">
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" name="title" required />
+          </div>
+
+          <div class="field">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="reward">Reward</label>
+            <input id="reward" name="reward" placeholder="50 USDC" required />
+          </div>
+
+          <button type="submit">Create Task</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="tasks-header">
+          <h2>Tasks</h2>
+          <button id="refresh-btn" type="button">Refresh</button>
+        </div>
+        <div id="tasks-container" class="tasks-container"></div>
+      </section>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
